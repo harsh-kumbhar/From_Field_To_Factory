@@ -1,0 +1,144 @@
+{
+  "heroTitle": "Transforming Crop Residue Into A Verified Biomass Economy",
+  "heroSubtitle": "AI-powered pricing, satellite verification, and a transparent biomass marketplace connecting farmers with industries.",
+  "explore": "Explore Marketplace",
+  "technology": "View Technology",
+
+  "features": "Core Technologies",
+  "how": "How It Works",
+  "marketplace": "Marketplace Preview",
+  "impact": "Environmental Impact",
+  "cta": "Join The Biomass Revolution",
+
+  "navbar": {
+    "features": "Features",
+    "marketplace": "Marketplace",
+    "impact": "Impact",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout"
+  },
+
+  "marketplacePage": {
+    "badge": "VERIFIED BIOMASS MARKETPLACE",
+    "title": "Biomass Listings",
+    "subtitle": "Explore AI-priced and satellite-verified biomass listings from trusted agricultural suppliers across India.",
+
+    "search": "Search biomass listings...",
+    "allCrops": "All Crops",
+    "minimumQuantity": "Minimum Quantity",
+    "applyFilters": "Apply Filters",
+
+    "loading": "Loading marketplace...",
+    "noListings": "No Listings Found",
+    "adjustFilters": "Try adjusting your search or filters.",
+
+    "verified": "Verified",
+    "biomassListing": "Biomass Listing",
+    "aiMarketplace": "AI-Powered Marketplace Listing",
+
+    "quantity": "Biomass Quantity",
+    "aiPrice": "AI Predicted Price",
+    "totalValue": "Total Listing Value",
+    "pickupDate": "Pickup Date",
+
+    "viewDetails": "View Marketplace Details"
+  },
+
+  "login": {
+    "title": "Industry Login",
+    "subtitle": "Access the AI-powered biomass marketplace platform.",
+    "email": "Business Email Address",
+    "password": "Password",
+    "button": "Login"
+  },
+
+  "register": {
+    "title": "Industry Registration",
+    "subtitle": "Join the verified biomass marketplace ecosystem.",
+    "company": "Company Name",
+    "contact": "Contact Person Name",
+    "phone": "Phone Number",
+    "gst": "GST Number",
+    "location": "Industry Location",
+    "bank": "Bank Account Number",
+    "email": "Business Email Address",
+    "password": "Create Password",
+    "button": "Create Account"
+  },
+
+  "dashboard": {
+    "title": "Welcome Back",
+    "openMarketplace": "Open Marketplace",
+    "logout": "Logout"
+  },
+
+  "footer": {
+    "team": "Green Guardians",
+    "project": "Field-To-Factory Biomass Marketplace",
+    "contact": "Contact",
+    "email": "greenguardians@gmail.com",
+    "phone": "+91 9876543210"
+  },
+  "listingDetails": {
+    "loading": "Loading Listing Details...",
+    "error": "Failed To Load Listing",
+    "notFound": "Listing Not Found",
+
+    "verified": "Satellite Verified Biomass",
+    "pricingInsights": "AI Pricing Insights",
+    "marketValue": "Total Marketplace Value",
+
+    "cropType": "Crop Type",
+    "quantity": "Biomass Quantity",
+    "pricePerTonne": "AI Predicted Price",
+    "priceRange": "Pricing Range",
+    "pickupDate": "Pickup Date",
+
+    "regionInfo": "Farmer Pickup Region",
+    "state": "State",
+    "district": "District",
+    "village": "Village",
+
+    "fieldInfo": "Field Information",
+    "area": "Field Area",
+    "polygon": "Polygon Status",
+    "polygonAvailable": "Polygon Data Available",
+
+    "mapPreview": "Field Polygon Preview",
+
+    "notes": "Marketplace Notes",
+
+    "notesText": "This biomass listing has been AI-priced and satellite verified to ensure transparency, procurement trust, and industrial-grade biomass quality assurance.",
+
+    "backMarketplace": "Back To Marketplace"
+  },
+  "purchase": {
+    "sendRequest": "Send Purchase Request",
+    "soldOut": "SOLD OUT",
+
+    "buyerMessage": "Buyer Message",
+    "buyerPlaceholder": "Need pickup within 3 days...",
+
+    "submitRequest": "Submit Request",
+    "sending": "Sending Request...",
+
+    "success": "Purchase request sent successfully",
+    "error": "Failed to send request",
+
+    "myRequests": "My Requests",
+
+    "pending": "Pending",
+    "accepted": "Accepted",
+    "rejected": "Rejected",
+
+    "requestDate": "Request Date",
+
+    "noRequests": "No Purchase Requests Yet",
+
+    "requestInsights": "Track your biomass procurement requests in real-time.",
+
+    "viewMarketplace": "Explore Marketplace"
+  }
+}

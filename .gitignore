@@ -1,0 +1,208 @@
+# =========================================================
+# ROOT ENV FILES
+# =========================================================
+
+.env
+.env.*
+!.env.example
+
+# =========================================================
+# PYTHON / FLASK
+# =========================================================
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Flask
+instance/
+.webassets-cache
+
+# Distribution / Packaging
+.Python
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit Test / Coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Logs
+*.log
+
+# SQLite
+*.sqlite3
+*.db
+
+# VS Python
+.python-version
+
+# =========================================================
+# NODE / REACT / VITE
+# =========================================================
+
+node_modules/
+
+# Vite
+dist/
+.vite/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Package Managers
+.pnpm-store/
+.npm/
+
+# =========================================================
+# REACT ENV FILES
+# =========================================================
+
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# =========================================================
+# BACKEND ENV FILES
+# =========================================================
+
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# =========================================================
+# IDE / EDITOR
+# =========================================================
+
+# VS Code
+.vscode/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# JetBrains
+.idea/
+
+# =========================================================
+# OS FILES
+# =========================================================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================================================
+# TEMP FILES
+# =========================================================
+
+tmp/
+temp/
+*.tmp
+
+# =========================================================
+# AI / MODEL FILES
+# =========================================================
+
+*.pkl
+*.joblib
+*.h5
+*.onnx
+*.pt
+*.pth
+
+# =========================================================
+# GOOGLE EARTH ENGINE / GEO FILES
+# =========================================================
+
+*.geojson
+*.shp
+*.kml
+*.kmz
+*.tif
+*.tiff
+
+# =========================================================
+# CACHE
+# =========================================================
+
+.cache/
+.parcel-cache/
+
+# =========================================================
+# MACRO GENERATED FILES
+# =========================================================
+
+*.bak
+*.swp
+*.swo
+
+# =========================================================
+# UPLOADS / GENERATED MEDIA
+# =========================================================
+
+uploads/
+media/
+generated/
+
+# =========================================================
+# SECRET KEYS
+# =========================================================
+
+secrets.json
+credentials.json
+service-account.json
+
+# =========================================================
+# OPTIONAL LOCAL DATABASE EXPORTS
+# =========================================================
+
+*.sql
+*.dump
+
+# =========================================================
+# KEEP IMPORTANT FILES
+# =========================================================
+
+!README.md
+!requirements.txt
+!package.json
+!package-lock.json
