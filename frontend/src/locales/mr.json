@@ -141,5 +141,45 @@
     "requestInsights": "तुमच्या बायोमास खरेदी विनंत्यांचे रिअल-टाइम ट्रॅकिंग करा।",
 
     "viewMarketplace": "मार्केटप्लेस पहा"
+  },
+  "admin": {
+    "adminLogin": "अॅडमिन लॉगिन",
+    "adminDashboard": "अॅडमिन डॅशबोर्ड",
+
+    "email": "अॅडमिन ईमेल",
+    "password": "पासवर्ड",
+
+    "signIn": "साइन इन",
+    "signingIn": "साइन इन सुरू आहे...",
+
+    "analytics": "प्लॅटफॉर्म विश्लेषण",
+
+    "totalListings": "एकूण लिस्टिंग",
+    "approvedListings": "मंजूर लिस्टिंग",
+    "pendingListings": "प्रलंबित लिस्टिंग",
+    "soldListings": "विकलेली लिस्टिंग",
+
+    "totalBuyers": "एकूण खरेदीदार",
+    "totalFarmers": "एकूण शेतकरी",
+
+    "purchaseRequests": "खरेदी विनंत्या",
+
+    "moderationQueue": "मॉडरेशन रांग",
+
+    "approve": "मंजूर करा",
+    "reject": "नकार द्या",
+    "flag": "फ्लॅग करा",
+
+    "pending": "प्रलंबित",
+    "approved": "मंजूर",
+    "rejected": "नाकारले",
+    "flagged": "फ्लॅग केलेले",
+    "sold": "विकले",
+
+    "listingModeration": "लिस्टिंग मॉडरेशन",
+
+    "noListings": "प्रलंबित लिस्टिंग नाहीत",
+
+    "moderationInsights": "बायोमास मार्केटप्लेस लिस्टिंगचे पुनरावलोकन आणि व्यवस्थापन करा."
   }
 }

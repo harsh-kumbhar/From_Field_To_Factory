@@ -35,7 +35,7 @@ export const createPurchaseRequest = async (
     const token =
         localStorage.getItem("token");
 
-    return api.post(
+    return API.post(
         "/purchase/request",
         data,
         {
@@ -59,4 +59,66 @@ export const getMyRequests = async () => {
         }
     );
 };
+export const adminLogin = async (
+    data
+) => {
+    return API.post(
+        "/admin/login",
+        data
+    );
+};
+
+export const getAdminListings =
+    async () => {
+        const token =
+            localStorage.getItem(
+                "adminToken"
+            );
+
+        return API.get(
+            "/admin/listings",
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            }
+        );
+    };
+
+export const updateListingStatus =
+    async (listingId, status) => {
+        const token =
+            localStorage.getItem(
+                "adminToken"
+            );
+
+        return API.patch(
+            `/admin/listing/${listingId}/status`,
+            {
+                status,
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            }
+        );
+    };
+
+export const getAdminAnalytics =
+    async () => {
+        const token =
+            localStorage.getItem(
+                "adminToken"
+            );
+
+        return API.get(
+            "/admin/analytics",
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            }
+        );
+    };
 export default API;

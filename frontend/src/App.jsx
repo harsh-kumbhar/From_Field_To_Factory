@@ -7,6 +7,9 @@ import IndustryDashboard from "./pages/IndustryDashboard";
 import MarketplacePage from "./pages/MarketplacePage";
 import ListingDetailsPage from "./pages/ListingDetailsPage";
 import MyRequestsPage from "./pages/MyRequestsPage";
+import AdminLoginPage from "./pages/AdminLoginPage";
+
+import AdminDashboard from "./pages/AdminDashboard";
 
 const ProtectedRoute = ({ children }) => {
     const token = localStorage.getItem("token");
@@ -46,6 +49,15 @@ function App() {
                 <Route
                     path="/my-requests"
                     element={<MyRequestsPage />}
+                />
+                <Route
+                    path="/admin/login"
+                    element={<AdminLoginPage />}
+                />
+
+                <Route
+                    path="/admin/dashboard"
+                    element={<AdminDashboard />}
                 />
             </Routes>
         </BrowserRouter>

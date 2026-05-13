@@ -4,6 +4,7 @@ from flask_cors import CORS
 from routes.auth_routes import auth_bp
 from routes.marketplace_routes import marketplace_bp
 from routes.purchase_routes import purchase_bp
+from routes.admin_routes import admin_bp
 app = Flask(__name__)
 CORS(app)
 
@@ -15,6 +16,10 @@ app.register_blueprint(
 app.register_blueprint(
     purchase_bp,
     url_prefix="/api/purchase"
+)
+app.register_blueprint(
+    admin_bp,
+    url_prefix="/api/admin"
 )
 
 @app.route("/")

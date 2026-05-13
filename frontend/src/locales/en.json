@@ -140,5 +140,45 @@
     "requestInsights": "Track your biomass procurement requests in real-time.",
 
     "viewMarketplace": "Explore Marketplace"
+  },
+  "admin": {
+    "adminLogin": "Admin Login",
+    "adminDashboard": "Admin Dashboard",
+
+    "email": "Admin Email",
+    "password": "Password",
+
+    "signIn": "Sign In",
+    "signingIn": "Signing In...",
+
+    "analytics": "Platform Analytics",
+
+    "totalListings": "Total Listings",
+    "approvedListings": "Approved Listings",
+    "pendingListings": "Pending Listings",
+    "soldListings": "Sold Listings",
+
+    "totalBuyers": "Total Buyers",
+    "totalFarmers": "Total Farmers",
+
+    "purchaseRequests": "Purchase Requests",
+
+    "moderationQueue": "Moderation Queue",
+
+    "approve": "Approve",
+    "reject": "Reject",
+    "flag": "Flag",
+
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "flagged": "Flagged",
+    "sold": "Sold",
+
+    "listingModeration": "Listing Moderation",
+
+    "noListings": "No Pending Listings",
+
+    "moderationInsights": "Review and govern biomass marketplace listings."
   }
 }

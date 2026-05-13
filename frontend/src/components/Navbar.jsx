@@ -55,6 +55,7 @@ const Navbar = () => {
                         Field-To-Factory
                     </Link>
 
+
                     {/* NAV LINKS */}
                     <div
                         style={{
@@ -76,6 +77,11 @@ const Navbar = () => {
                             Impact
                         </a>
                     </div>
+                    <Link to="/admin/login">
+                        <button style={navLinkStyle}>
+                            Admin
+                        </button>
+                    </Link>
 
                     {/* RIGHT SECTION */}
                     <div
