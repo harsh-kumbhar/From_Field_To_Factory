@@ -180,5 +180,30 @@
     "noListings": "No Pending Listings",
 
     "moderationInsights": "Review and govern biomass marketplace listings."
+  },
+  "verification": {
+    "satelliteVerified": "Satellite Verified",
+    "verificationFailed": "Verification Failed",
+    "inconclusive": "Inconclusive",
+    "aiVerification": "AI Satellite Verification",
+    "runningAnalysis": "Running AI-powered geospatial analysis...",
+    "analyzingImagery": "Analyzing Sentinel-2 imagery...",
+    "computingNdvi": "Computing NDVI vegetation index...",
+    "detectingResidue": "Detecting biomass residue...",
+    "validatingField": "Validating harvested field...",
+    "verificationMetrics": "Verification Metrics",
+    "ndvi": "NDVI",
+    "ndti": "NDTI",
+    "bsi": "BSI",
+    "harvestedField": "Harvested Field",
+    "residueDetected": "Residue Detected",
+    "bareSoil": "Bare Soil Visibility",
+    "verifiedSuccessfully": "Field Successfully Verified",
+    "notVerified": "Verification Could Not Be Confirmed",
+    "trustLayer": "AI Trust Layer",
+    "satelliteProof": "Satellite Intelligence Proof",
+    "verifySatellite": "Verify via Satellite",
+    "verificationInsights": "Satellite Verification Insights",
+    "trustedBiomass": "Scientifically validated biomass listing"
   }
 }

@@ -11,13 +11,21 @@ import { Link, useNavigate } from "react-router-dom";
 const AdminSidebar = () => {
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    localStorage.removeItem("adminToken");
+    const handleLogout = () => {
+        localStorage.removeItem(
+            "adminToken"
+        );
 
-    localStorage.removeItem("admin");
+        localStorage.removeItem(
+            "admin"
+        );
 
-    navigate("/admin/login");
-  };
+        navigate("/", {
+            replace: true,
+        });
+
+        window.location.reload();
+    };
 
   const itemStyle = {
     display: "flex",

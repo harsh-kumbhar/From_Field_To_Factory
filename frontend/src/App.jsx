@@ -1,4 +1,9 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+    Navigate,
+} from "react-router-dom";
 
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
@@ -7,15 +12,47 @@ import IndustryDashboard from "./pages/IndustryDashboard";
 import MarketplacePage from "./pages/MarketplacePage";
 import ListingDetailsPage from "./pages/ListingDetailsPage";
 import MyRequestsPage from "./pages/MyRequestsPage";
+import AdminPurchases from "./pages/AdminPurchases";
 import AdminLoginPage from "./pages/AdminLoginPage";
-
 import AdminDashboard from "./pages/AdminDashboard";
+import AdminListings from "./pages/AdminListings";
+import AdminVerification from "./pages/AdminVerification";
 
-const ProtectedRoute = ({ children }) => {
-    const token = localStorage.getItem("token");
+const ProtectedRoute = ({
+    children,
+}) => {
+    const token =
+        localStorage.getItem(
+            "token"
+        );
 
     if (!token) {
-        return <Navigate to="/login" />;
+        return (
+            <Navigate
+                to="/login"
+                replace
+            />
+        );
+    }
+
+    return children;
+};
+
+const AdminProtectedRoute = ({
+    children,
+}) => {
+    const adminToken =
+        localStorage.getItem(
+            "adminToken"
+        );
+
+    if (!adminToken) {
+        return (
+            <Navigate
+                to="/admin/login"
+                replace
+            />
+        );
     }
 
     return children;
@@ -25,13 +62,43 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
+                {/* PUBLIC */}
+                <Route
+                    path="/"
+                    element={
+                        <LandingPage />
+                    }
+                />
 
-                <Route path="/" element={<LandingPage />} />
+                <Route
+                    path="/login"
+                    element={
+                        <LoginPage />
+                    }
+                />
 
-                <Route path="/login" element={<LoginPage />} />
+                <Route
+                    path="/register"
+                    element={
+                        <RegisterPage />
+                    }
+                />
 
-                <Route path="/register" element={<RegisterPage />} />
+                <Route
+                    path="/marketplace"
+                    element={
+                        <MarketplacePage />
+                    }
+                />
 
+                <Route
+                    path="/listing/:id"
+                    element={
+                        <ListingDetailsPage />
+                    }
+                />
+
+                {/* USER PROTECTED */}
                 <Route
                     path="/dashboard"
                     element={
@@ -40,24 +107,68 @@ function App() {
                         </ProtectedRoute>
                     }
                 />
-                <Route path="/marketplace" element={<MarketplacePage />} />
 
                 <Route
-                    path="/listing/:id"
-                    element={<ListingDetailsPage />}
-                />
-                <Route
                     path="/my-requests"
-                    element={<MyRequestsPage />}
+                    element={
+                        <ProtectedRoute>
+                            <MyRequestsPage />
+                        </ProtectedRoute>
+                    }
                 />
+
+                {/* ADMIN */}
                 <Route
                     path="/admin/login"
-                    element={<AdminLoginPage />}
+                    element={
+                        <AdminLoginPage />
+                    }
                 />
 
                 <Route
                     path="/admin/dashboard"
-                    element={<AdminDashboard />}
+                    element={
+                        <AdminProtectedRoute>
+                            <AdminDashboard />
+                        </AdminProtectedRoute>
+                    }
+                />
+
+                <Route
+                    path="/admin/listings"
+                    element={
+                        <AdminProtectedRoute>
+                            <AdminListings />
+                        </AdminProtectedRoute>
+                    }
+                />
+
+                <Route
+                    path="/admin/verification/:listingId"
+                    element={
+                        <AdminProtectedRoute>
+                            <AdminVerification />
+                        </AdminProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/admin/purchases"
+                    element={
+                        <AdminProtectedRoute>
+                            <AdminPurchases />
+                        </AdminProtectedRoute>
+                    }
+                />
+
+                {/* FALLBACK */}
+                <Route
+                    path="*"
+                    element={
+                        <Navigate
+                            to="/"
+                            replace
+                        />
+                    }
                 />
             </Routes>
         </BrowserRouter>

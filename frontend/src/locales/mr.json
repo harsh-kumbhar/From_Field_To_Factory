@@ -181,5 +181,30 @@
     "noListings": "प्रलंबित लिस्टिंग नाहीत",
 
     "moderationInsights": "बायोमास मार्केटप्लेस लिस्टिंगचे पुनरावलोकन आणि व्यवस्थापन करा."
+  },
+  "verification": {
+    "satelliteVerified": "उपग्रह सत्यापित",
+    "verificationFailed": "सत्यापन अयशस्वी",
+    "inconclusive": "अनिश्चित निकाल",
+    "aiVerification": "AI उपग्रह सत्यापन",
+    "runningAnalysis": "AI आधारित भू-विश्लेषण सुरू आहे...",
+    "analyzingImagery": "Sentinel-2 प्रतिमांचे विश्लेषण...",
+    "computingNdvi": "NDVI निर्देशांक मोजला जात आहे...",
+    "detectingResidue": "बायोमास अवशेष शोधले जात आहेत...",
+    "validatingField": "कापणी झालेल्या शेताची पडताळणी...",
+    "verificationMetrics": "सत्यापन मेट्रिक्स",
+    "ndvi": "NDVI",
+    "ndti": "NDTI",
+    "bsi": "BSI",
+    "harvestedField": "कापणी झालेले शेत",
+    "residueDetected": "अवशेष आढळले",
+    "bareSoil": "मोकळी माती दिसली",
+    "verifiedSuccessfully": "शेत यशस्वीरित्या सत्यापित",
+    "notVerified": "सत्यापनाची खात्री झाली नाही",
+    "trustLayer": "AI ट्रस्ट लेयर",
+    "satelliteProof": "उपग्रह पुरावा",
+    "verifySatellite": "उपग्रहाद्वारे सत्यापित करा",
+    "verificationInsights": "उपग्रह सत्यापन माहिती",
+    "trustedBiomass": "वैज्ञानिकदृष्ट्या सत्यापित बायोमास लिस्टिंग"
   }
 }

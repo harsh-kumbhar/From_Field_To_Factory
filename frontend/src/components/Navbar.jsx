@@ -52,8 +52,15 @@ const Navbar = () => {
                             textDecoration: "none",
                         }}
                     >
-                        Field-To-Factory
+                        E-Krushi Avashesh 
                     </Link>
+                    <Link
+                        to="/admin/dashboard"
+                        className="gradient-text inline-block px-6 py-3 bg-blue-600 text-white font-black text-2xl rounded-lg hover:bg-blue-700 transition no-underline text-center"
+                    >
+                        Admin
+                    </Link>
+
 
 
                     {/* NAV LINKS */}
@@ -77,11 +84,7 @@ const Navbar = () => {
                             Impact
                         </a>
                     </div>
-                    <Link to="/admin/login">
-                        <button style={navLinkStyle}>
-                            Admin
-                        </button>
-                    </Link>
+                 
 
                     {/* RIGHT SECTION */}
                     <div

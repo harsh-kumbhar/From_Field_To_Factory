@@ -6,9 +6,12 @@ import {
     ShieldCheck,
     Calendar,
     Package,
+    Satellite,
 } from "lucide-react";
 
 import { useTranslation } from "react-i18next";
+
+import VerificationBadge from "./VerificationBadge";
 
 const ListingCard = ({ listing }) => {
     const { t } = useTranslation();
@@ -16,21 +19,55 @@ const ListingCard = ({ listing }) => {
     const imageUrl = listing.image_path
         ? `${import.meta.env.VITE_STORAGE_BUCKET_URL}${listing.image_path}`
         : "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200&auto=format&fit=crop";
+    const hasAiPricing =
+        listing.predicted_price_per_tonne;
 
+    const hasLegacyPricing =
+        listing.expected_price;
+
+    const hasPricing =
+        hasAiPricing || hasLegacyPricing;
+
+    const displayPricePerTon =
+        listing.predicted_price_per_tonne ||
+        listing.expected_price ||
+        "Pending";
+
+    const displayTotalPrice =
+        listing.total_listing_price ||
+        (
+            (listing.expected_price || 0) *
+            (listing.residue_quantity || 0)
+        );
+
+    const pricingLabel =
+        hasAiPricing
+            ? "AI Verified Pricing"
+            : hasLegacyPricing
+                ? "Estimated Pricing"
+                : "Pricing Pending";
     return (
         <motion.div
             whileHover={{ y: -8 }}
-            transition={{ duration: 0.3 }}
+            transition={{
+                duration: 0.3,
+            }}
             className="glass glow-green"
             style={{
                 borderRadius: "34px",
                 overflow: "hidden",
                 display: "grid",
                 gridTemplateColumns:
-                    window.innerWidth < 900
+                    window.innerWidth <
+                        900
                         ? "1fr"
                         : "1fr 1.2fr",
                 minHeight: "340px",
+
+                border:
+                    listing.satellite_verified
+                        ? "1px solid rgba(34,197,94,0.25)"
+                        : "1px solid rgba(255,255,255,0.06)",
             }}
         >
             {/* IMAGE SIDE */}
@@ -71,47 +108,86 @@ const ListingCard = ({ listing }) => {
                         position: "absolute",
                         top: "20px",
                         left: "20px",
-                        background: "#22c55e",
+                        background:
+                            "#22c55e",
                         color: "#020617",
-                        padding: "10px 16px",
-                        borderRadius: "999px",
+                        padding:
+                            "10px 16px",
+                        borderRadius:
+                            "999px",
                         display: "flex",
-                        alignItems: "center",
+                        alignItems:
+                            "center",
                         gap: "8px",
                         fontWeight: 800,
-                        fontSize: "0.9rem",
+                        fontSize:
+                            "0.9rem",
                     }}
                 >
-                    <ShieldCheck size={18} />
-                    {t("marketplacePage.verified")}
+                    <ShieldCheck
+                        size={18}
+                    />
+
+                    {t(
+                        "marketplacePage.verified"
+                    )}
                 </div>
+
+                {/* SATELLITE BADGE */}
+                {listing.satellite_verified && (
+                    <div
+                        style={{
+                            position:
+                                "absolute",
+                            top: "20px",
+                            right: "20px",
+                        }}
+                    >
+                        <VerificationBadge
+                            verified={
+                                true
+                            }
+                            compact={
+                                true
+                            }
+                        />
+                    </div>
+                )}
 
                 {/* IMAGE LABEL */}
                 <div
                     style={{
-                        position: "absolute",
+                        position:
+                            "absolute",
                         bottom: "24px",
                         left: "24px",
                     }}
                 >
                     <p
                         style={{
-                            color: "#84cc16",
-                            marginBottom: "8px",
+                            color:
+                                "#84cc16",
+                            marginBottom:
+                                "8px",
                             fontWeight: 700,
                         }}
                     >
-                        {t("marketplacePage.biomassListing")}
+                        {t(
+                            "marketplacePage.biomassListing"
+                        )}
                     </p>
 
                     <h2
                         style={{
-                            fontSize: "2rem",
+                            fontSize:
+                                "2rem",
                             fontWeight: 900,
                             color: "white",
                         }}
                     >
-                        {listing.crop_type}
+                        {
+                            listing.crop_type
+                        }
                     </h2>
                 </div>
             </div>
@@ -121,30 +197,40 @@ const ListingCard = ({ listing }) => {
                 style={{
                     padding: "34px",
                     display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
+                    flexDirection:
+                        "column",
+                    justifyContent:
+                        "space-between",
                 }}
             >
                 <div>
                     {/* HEADER */}
                     <div
                         style={{
-                            display: "flex",
-                            alignItems: "center",
+                            display:
+                                "flex",
+                            alignItems:
+                                "center",
                             gap: "14px",
-                            marginBottom: "20px",
+                            marginBottom:
+                                "20px",
                         }}
                     >
                         <div
                             style={{
                                 width: "58px",
-                                height: "58px",
-                                borderRadius: "18px",
+                                height:
+                                    "58px",
+                                borderRadius:
+                                    "18px",
                                 background:
                                     "linear-gradient(to right,#22c55e,#84cc16)",
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
+                                display:
+                                    "flex",
+                                justifyContent:
+                                    "center",
+                                alignItems:
+                                    "center",
                             }}
                         >
                             <Leaf color="#020617" />
@@ -153,79 +239,170 @@ const ListingCard = ({ listing }) => {
                         <div>
                             <h3
                                 style={{
-                                    fontSize: "1.8rem",
+                                    fontSize:
+                                        "1.8rem",
                                     fontWeight: 800,
-                                    marginBottom: "6px",
+                                    marginBottom:
+                                        "6px",
                                 }}
                             >
-                                {listing.title}
+                                {
+                                    listing.title
+                                }
                             </h3>
 
                             <p
                                 style={{
-                                    color: "#94a3b8",
+                                    color:
+                                        "#94a3b8",
                                 }}
                             >
-                                {t("marketplacePage.aiMarketplace")}
+                                {t(
+                                    "marketplacePage.aiMarketplace"
+                                )}
                             </p>
                         </div>
                     </div>
 
+                    {/* SATELLITE VERIFIED INFO */}
+                    {listing.satellite_verified && (
+                        <div
+                            style={{
+                                display:
+                                    "flex",
+                                alignItems:
+                                    "center",
+                                gap: "10px",
+                                marginBottom:
+                                    "24px",
+                                padding:
+                                    "14px 18px",
+                                borderRadius:
+                                    "18px",
+                                background:
+                                    "rgba(34,197,94,0.12)",
+                                border:
+                                    "1px solid rgba(34,197,94,0.2)",
+                                color:
+                                    "#22c55e",
+                                fontWeight: 700,
+                            }}
+                        >
+                            <Satellite
+                                size={18}
+                            />
+
+                            AI Satellite
+                            Biomass
+                            Verified
+                        </div>
+                    )}
+
                     {/* INFO */}
                     <div
                         style={{
-                            display: "grid",
+                            display:
+                                "grid",
                             gap: "18px",
-                            marginTop: "30px",
+                            marginTop:
+                                "30px",
                         }}
                     >
-                        <div style={infoRow}>
-                            <span style={labelStyle}>
-                                <Package size={18} />
-                                {t("marketplacePage.quantity")}
-                            </span>
+                        <div
+                            style={infoRow}
+                        >
+                            <span
+                                style={
+                                    labelStyle
+                                }
+                            >
+                                <Package
+                                    size={
+                                        18
+                                    }
+                                />
 
-                            <span style={valueStyle}>
-                                {listing.residue_quantity} Tons
-                            </span>
-                        </div>
-
-                        <div style={infoRow}>
-                            <span style={labelStyle}>
-                                {t("marketplacePage.aiPrice")}
+                                {t(
+                                    "marketplacePage.quantity"
+                                )}
                             </span>
 
                             <span
-                                className="gradient-text"
+                                style={
+                                    valueStyle
+                                }
+                            >
+                                {
+                                    listing.residue_quantity
+                                }{" "}
+                                Tons
+                            </span>
+                        </div>
+                        <div style={infoRow}>
+                            <span style={labelStyle}>
+                                {pricingLabel}
+                            </span>
+
+                            <span
+                                className={
+                                    hasPricing
+                                        ? "gradient-text"
+                                        : ""
+                                }
                                 style={{
                                     fontWeight: 900,
                                     fontSize: "1.2rem",
+                                    color: hasPricing
+                                        ? undefined
+                                        : "#f59e0b",
                                 }}
                             >
-                                ₹
-                                {listing.predicted_price_per_tonne}
-                                /Ton
+                                {hasPricing
+                                    ? `₹${displayPricePerTon}/Ton`
+                                    : "Pricing Pending"}
                             </span>
                         </div>
-
                         <div style={infoRow}>
                             <span style={labelStyle}>
-                                {t("marketplacePage.totalValue")}
+                                {t(
+                                    "marketplacePage.totalValue"
+                                )}
                             </span>
 
                             <span style={valueStyle}>
-                                ₹{listing.total_listing_price}
+                                {hasPricing
+                                    ? `₹${displayTotalPrice}`
+                                    : "Unavailable"}
                             </span>
                         </div>
 
-                        <div style={infoRow}>
-                            <span style={labelStyle}>
-                                <Calendar size={18} />
-                                {t("marketplacePage.pickupDate")}
+                        <div
+                            style={infoRow}
+                        >
+                            <span
+                                style={
+                                    labelStyle
+                                }
+                            >
+                                <Calendar
+                                    size={
+                                        18
+                                    }
+                                />
+
+                                {t(
+                                    "marketplacePage.pickupDate"
+                                )}
                             </span>
 
-                            <span style={valueStyle}>
-                                {listing.pickup_date}
+                            <span
+                                style={
+                                    valueStyle
+                                }
+                            >
+                                {
+                                    listing.pickup_date
+                                }
                             </span>
                         </div>
                     </div>
@@ -234,24 +411,35 @@ const ListingCard = ({ listing }) => {
                 {/* BUTTON */}
                 <Link
                     to={`/listing/${listing.id}`}
-                    state={{ listing }}
+                    state={{
+                        listing,
+                    }}
                 >
                     <button
                         style={{
                             width: "100%",
-                            marginTop: "30px",
+                            marginTop:
+                                "30px",
                             background:
                                 "linear-gradient(to right,#22c55e,#84cc16)",
-                            color: "#020617",
-                            border: "none",
-                            padding: "18px",
-                            borderRadius: "18px",
+                            color:
+                                "#020617",
+                            border:
+                                "none",
+                            padding:
+                                "18px",
+                            borderRadius:
+                                "18px",
                             fontWeight: 900,
-                            fontSize: "1rem",
-                            cursor: "pointer",
+                            fontSize:
+                                "1rem",
+                            cursor:
+                                "pointer",
                         }}
                     >
-                        {t("marketplacePage.viewDetails")}
+                        {t(
+                            "marketplacePage.viewDetails"
+                        )}
                     </button>
                 </Link>
             </div>
@@ -261,7 +449,8 @@ const ListingCard = ({ listing }) => {
 
 const infoRow = {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent:
+        "space-between",
     alignItems: "center",
     paddingBottom: "14px",
     borderBottom:
